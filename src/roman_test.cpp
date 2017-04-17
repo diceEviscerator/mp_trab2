@@ -2,13 +2,12 @@
 #include "gtest/gtest.h"
 #include "roman.h"
 
-char entry[31];
+char entry[31]={"\0"};
 int result;
 
 TEST(romanTest, fail){
-	entry=NULL;
-	result=transf_roman((char*) entry);
-	EXPECT_EQ(-1, result);
+  result=transf_roman(entry);
+  EXPECT_EQ(-1, result);
 
 }
 
