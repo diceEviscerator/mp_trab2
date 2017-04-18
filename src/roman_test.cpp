@@ -26,6 +26,78 @@ TEST(romanTest, threeTest){
 	result=transf_roman(entry);
 	EXPECT_EQ(3, result);
 }
+TEST(romanTest, invString3){
+	strcpy(entry, "IIV");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
+TEST(romanTest, invString4){
+	strcpy(entry, "IC");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
+TEST(romanTest, sixTest){
+	strcpy(entry, "VI");
+	result=transf_roman(entry);
+	EXPECT_EQ(6, result);
+}
+TEST(romanTest, fourTest){
+	strcpy(entry, "IV");
+	result=transf_roman(entry);
+	EXPECT_EQ(4, result);
+}
+TEST(romanTest, oneTest){
+	strcpy(entry, "CXI");
+	result=transf_roman(entry);
+	EXPECT_EQ(111, result);
+}
+TEST(romnTest, randTest){
+	strcpy(entry, "MMCLXI");
+	result=transf_roman(entry);
+	EXPECT_EQ(2161, result);
+	strcpy(entry, "MCMXII");
+	result=transf_roman(entry);
+	EXPECT_EQ(1912, result);
+	strcpy(entry, "CDXLV");
+	result=transf_roman(entry);
+	EXPECT_EQ(445, result);
+	strcpy(entry, "MCXXV");
+	result=transf_roman(entry);
+	EXPECT_EQ(1125, result);
+	strcpy(entry, "LV");
+	result=transf_roman(entry);
+	EXPECT_EQ(55, result);
+	strcpy(entry, "CMLXXVII");
+	result=transf_roman(entry);
+	EXPECT_EQ(977, result);
+	strcpy(entry, "MMDXIII");
+	result=transf_roman(entry);
+	EXPECT_EQ(2513, result);
+	strcpy(entry, "MDCI");
+	result=transf_roman(entry);
+	EXPECT_EQ(1601, result);
+	strcpy(entry, "MCDVI");
+	result=transf_roman(entry);
+	EXPECT_EQ(1406, result);
+	strcpy(entry, "CLVII");
+	result=transf_roman(entry);
+	EXPECT_EQ(157, result);
+	strcpy(entry, "MMCLXXXVIII");
+	result=transf_roman(entry);
+	EXPECT_EQ(2188, result);
+	strcpy(entry, "DCCLXX");
+	result=transf_roman(entry);
+	EXPECT_EQ(770, result);
+	strcpy(entry, "MMCMX");
+	result=transf_roman(entry);
+	EXPECT_EQ(2910, result);
+	strcpy(entry, "CCCV");
+	result=transf_roman(entry);
+	EXPECT_EQ(305, result);
+	strcpy(entry, "MDCCXLV");
+	result=transf_roman(entry);
+	EXPECT_EQ(1745, result);
+}
 
 TEST(indexVectorTest, testI){
 	strcpy(entry, "IVXLCDM");
