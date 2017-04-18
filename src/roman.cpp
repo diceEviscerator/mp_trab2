@@ -1,7 +1,7 @@
 # include "roman.h"
 
 int transf_roman (char *numb){
-	int result=0, size=0, i=0;
+	int result=0, size=0, i=0, eq_char=0;
 
 	size=strlen( numb);
 	if(size<=0){
@@ -13,8 +13,18 @@ int transf_roman (char *numb){
 				printf("Erro: string invalida\n");
 				return -1;
 			}
+			if(i>0){
+				if(numb[i]==numb[i-1]){
+					eq_char++;
+					if(eq_char>=3){
+						return -1;
+					}
+				}else{
+					eq_char=0;
+				}
+			}
 		}
-		for(i=0;i<=size; i++){
+		for(i=0;i<size; i++){
 			if((numb[i]=='I')){
 				result++;
 			}
