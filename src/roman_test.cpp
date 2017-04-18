@@ -15,6 +15,11 @@ TEST(romanTest, invString){
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
 }
+TEST(romanTest, invString2){
+	strcpy(entry, "IIII");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
 TEST(romanTest, threeTest){
 	strcpy(entry, "III");
 	result=transf_roman(entry);
