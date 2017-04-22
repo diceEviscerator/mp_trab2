@@ -46,12 +46,7 @@ TEST(romanTest, invString6){
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
 }
-TEST(romanTest, invStringExt1){
-	strcpy(entry, "IIIV");
-	result=transf_roman(entry);
-	EXPECT_EQ(-1, result);
-}
-TEST(romanTest, invStringExt2){
+TEST(romanTest, invString7){
 	strcpy(entry, "VIX");
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
@@ -132,7 +127,7 @@ TEST(romnTest, randTest){
 TEST(indexVectorTest, testI){
 	strcpy(entry, "IVXLCDM");
 	size=strlen(entry);
-	index_vector(entry, size, index_v);
+	indexator(entry, size, index_v);
 	for(i=0; i<size; i++){
 		EXPECT_EQ(index_v[i], i+1);
 	}

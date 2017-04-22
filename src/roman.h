@@ -7,4 +7,4 @@ int adder (int *v_index, int size);
 
 void subtracter (int v_index, int size, int result);
 
-void index_vector (char *numb, int size, int *v_index);
+void indexator (char *numb, int size, int *v_index);
