@@ -1,0 +1,167 @@
+        -:    0:Source:roman.cpp
+        -:    0:Graph:obj/roman.gcno
+        -:    0:Data:obj/roman.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:# include "roman.h"
+        -:    2:
+      120:    3:void index_vector (char *numb, int size, int *v_index){
+        -:    4:	int i;
+        -:    5:	char c_numb;
+        -:    6:
+      908:    7:	for(i=0;i<=size; i++){
+      788:    8:		c_numb=numb[i];
+      788:    9:		switch (c_numb){
+        -:   10:			case 0:
+      120:   11:				v_index[i]=0;
+      120:   12:				break;
+        -:   13:			case 73:
+      162:   14:				v_index[i]=1;
+      162:   15:				break;
+        -:   16:			case 86:
+       68:   17:				v_index[i]=2;
+       68:   18:				break;
+        -:   19:			case 88:
+      141:   20:				v_index[i]=3;
+      141:   21:				break;
+        -:   22:			case 76:
+       54:   23:				v_index[i]=4;
+       54:   24:				break;
+        -:   25:			case 67:
+      103:   26:				v_index[i]=5;
+      103:   27:				break;
+        -:   28:			case 68:
+       35:   29:				v_index[i]=6;
+       35:   30:				break;
+        -:   31:			case 77:
+      105:   32:				v_index[i]=7;
+      105:   33:				break;
+        -:   34:			default:
+    #####:   35:				v_index[i]=-1;
+    #####:   36:				break;
+        -:   37:		}
+        -:   38:	}
+      120:   39:	return;
+        -:   40:}
+        -:   41:
+       22:   42:int adder (int *v_index, int size){
+       22:   43:	int i, result=0;
+        -:   44:
+      151:   45:	for(i=0;i<=size; i++){
+      129:   46:		switch(v_index[i]){
+        -:   47:			case 1:
+       23:   48:				result=result+1;
+       23:   49:				break;
+        -:   50:			case 2:
+       12:   51:				result=result+5;
+       12:   52:				break;
+        -:   53:			case 3:
+       23:   54:				result=result+10;
+       23:   55:				break;
+        -:   56:			case 4:
+        9:   57:				result=result+50;
+        9:   58:				break;
+        -:   59:			case 5:
+       18:   60:				result=result+100;
+       18:   61:				break;
+        -:   62:			case 6:
+        6:   63:				result=result+500;
+        6:   64:				break;
+        -:   65:			case 7:
+       16:   66:				result=result+1000;
+       16:   67:				break;
+        -:   68:			default:
+       22:   69:				result=result+0;
+       22:   70:				break;
+        -:   71:		}
+        -:   72:	}
+       22:   73:	return result;
+        -:   74:}
+        -:   75:
+       22:   76:int subtracter (int *v_index, int size, int result){
+        -:   77:	int i;
+        -:   78:
+      151:   79:	for(i=0;i<=size;i++){
+      129:   80:		if(i==0){}else{
+      107:   81:			if((v_index[i])>(v_index[i-1])){
+       11:   82:				switch (v_index[i]){
+        -:   83:					case 2:
+        1:   84:						result=result-2;
+        1:   85:						break;
+        -:   86:					case 3:
+        2:   87:						result=result-2;
+        -:   88:					case 4:
+        5:   89:						result=result-20;
+        5:   90:						break;
+        -:   91:					case 5:
+    #####:   92:						result=result-20;
+    #####:   93:						break;
+        -:   94:					case 6:
+        2:   95:						result=result-200;
+        2:   96:						break;
+        -:   97:					case 7:
+        3:   98:						result=result-200;
+        3:   99:						break;
+        -:  100:					default:
+    #####:  101:						result=result-0;
+    #####:  102:						break;
+        -:  103:				}
+        -:  104:			}
+        -:  105:		}
+        -:  106:	}
+       22:  107:	return result;
+        -:  108:}
+        -:  109:
+       30:  110:int transf_roman (char *numb){
+       30:  111:	int result=0, size=0, i=0, eq_char=0, v_index[31];
+        -:  112:
+       30:  113:	size=strlen( numb);
+       30:  114:	if(size<=0){
+        1:  115:		printf("Erro: string vazia\n"); return -1;
+        -:  116:	}
+        -:  117:	else{
+      142:  118:		for(i=0;i<size; i++){
+      120:  119:			if((numb[i]!='I')&&(numb[i]!='V')&&(numb[i]!='X')&&(numb[i]!='L')&&(numb[i]!='C')&&(numb[i]!='D')&&(numb[i]!='M')){
+        1:  120:				printf("Erro: string invalida, falha 1\n");
+        1:  121:				return -1;
+        -:  122:			}
+      119:  123:			index_vector(numb, size, v_index);
+      119:  124:			if(i>0){
+       91:  125:				if(numb[i]==numb[i-1]){
+       30:  126:					eq_char++;
+       30:  127:					if(eq_char>=3){
+        1:  128:						printf("Erro: string invalida, falha 2\n");
+        1:  129:						return -1;
+        -:  130:					}
+       29:  131:					if((eq_char!=0)&&(v_index[i]<v_index[i+1])){
+        2:  132:						printf("Erro: string invalida, falha 3\n");
+        2:  133:						return -1;
+        -:  134:					}
+        -:  135:				}else{
+       61:  136:					eq_char=0;
+        -:  137:				}
+        -:  138:			}
+      116:  139:			if(v_index[i+1]-v_index[i]>2){
+        1:  140:				printf("Erro: string invalida, falha 4\n");
+        1:  141:				return -1;
+        -:  142:			}
+      115:  143:			if((v_index[i+1]==v_index[i])&&(v_index[i]%2==0)){
+        1:  144:				printf("Erro: string invalida, falha 5\n");
+        1:  145:				return -1;
+        -:  146:			}
+      114:  147:			if((v_index[i]%2==0)&&(v_index[i+1]%2!=0)&&(v_index[i+1]>v_index[i])){
+        1:  148:				printf("Erro: string invalida, falha 6\n");
+        1:  149:				return -1;
+        -:  150:			}
+        -:  151:		}
+       22:  152:		result=adder(v_index, size);
+       22:  153:		result=subtracter(v_index, size, result);
+       22:  154:		if(result<=0){
+        1:  155:			printf("Erro: string invalida, falha 7\n");
+        1:  156:			return -1;
+        -:  157:		}
+       21:  158:		printf("%d\n", result);
+       21:  159:		return result;
+        -:  160:	}
+        -:  161:	return 0;
+        -:  162:}

@@ -108,7 +108,7 @@ int subtracter (int *v_index, int size, int result){
 }
 
 int transf_roman (char *numb){
-	int result=0, size=0, i=0, eq_char=0, v_index[31], high=0;
+	int result=0, size=0, i=0, eq_char=0, v_index[31];
 
 	size=strlen( numb);
 	if(size<=0){
@@ -140,9 +140,22 @@ int transf_roman (char *numb){
 				printf("Erro: string invalida, falha 4\n");
 				return -1;
 			}
+			if((v_index[i+1]==v_index[i])&&(v_index[i]%2==0)){
+				printf("Erro: string invalida, falha 5\n");
+				return -1;
+			}
+			if((v_index[i]%2==0)&&(v_index[i+1]%2!=0)&&(v_index[i+1]>v_index[i])){
+				printf("Erro: string invalida, falha 6\n");
+				return -1;
+			}
+			
 		}
 		result=adder(v_index, size);
 		result=subtracter(v_index, size, result);
+		if(result<=0){
+			printf("Erro: string invalida, falha 7\n");
+			return -1;
+		}
 		printf("%d\n", result);
 		return result;
 	}

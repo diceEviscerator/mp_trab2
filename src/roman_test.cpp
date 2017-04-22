@@ -36,6 +36,36 @@ TEST(romanTest, invString4){
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
 }
+TEST(romanTest, invString5){
+	strcpy(entry, "VV");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
+TEST(romanTest, invString6){
+	strcpy(entry, "VX");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
+TEST(romanTest, invStringExt1){
+	strcpy(entry, "IIIV");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
+TEST(romanTest, invStringExt2){
+	strcpy(entry, "VIX");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
+TEST(romanTest, invStringExt3){
+	strcpy(entry, "XXIXX");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
+TEST(romanTest, invStringExt4){
+	strcpy(entry, "XLX");
+	result=transf_roman(entry);
+	EXPECT_EQ(-1, result);
+}
 TEST(romanTest, sixTest){
 	strcpy(entry, "VI");
 	result=transf_roman(entry);
