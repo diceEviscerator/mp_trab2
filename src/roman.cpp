@@ -44,7 +44,7 @@ int adder (int *v_index, int size){
 
 	for(i=0;i<=size; i++){
 		switch(v_index[i]){
-			case 1:
+			case 1: 
 				result=result+1;
 				break;
 			case 2:
@@ -77,7 +77,7 @@ int subtracter (int *v_index, int size, int result){
 	int i;
 
 	for(i=0;i<=size;i++){
-		if(i==0){}else{
+		if(i>0){
 			if((v_index[i])>(v_index[i-1])){
 				switch (v_index[i]){
 					case 2:
@@ -85,6 +85,7 @@ int subtracter (int *v_index, int size, int result){
 						break;
 					case 3:
 						result=result-2;
+						break;
 					case 4:
 						result=result-20;
 						break;
@@ -108,7 +109,7 @@ int subtracter (int *v_index, int size, int result){
 }
 
 int transf_roman (char *numb){
-	int result=0, size=0, i=0, eq_char=0, v_index[31];
+	int result=0, size=0, i=0, j=0, eq_char=0, v_index[31], subtrct_case;
 
 	size=strlen( numb);
 	if(size<=0){
@@ -148,7 +149,17 @@ int transf_roman (char *numb){
 				printf("Erro: string invalida, falha 6\n");
 				return -1;
 			}
-			
+			if(i>0){
+				if((v_index[i])>(v_index[i-1])){
+					subtrct_case=v_index[i];
+					for (j=i+1;j<size;j++){
+						if(subtrct_case==v_index[j]){
+							printf("Erro: string invalida, falha 8\n");
+							return -1;
+						}
+					}
+				}
+			}
 		}
 		result=adder(v_index, size);
 		result=subtracter(v_index, size, result);
