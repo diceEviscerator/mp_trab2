@@ -1,0 +1,52 @@
+\hypertarget{roman_8cpp}{}\section{/home/dice/\+Desktop/\+Prog/src/\+M\+P/src/roman.cpp File Reference}
+\label{roman_8cpp}\index{/home/dice/\+Desktop/\+Prog/src/\+M\+P/src/roman.\+cpp@{/home/dice/\+Desktop/\+Prog/src/\+M\+P/src/roman.\+cpp}}
+{\ttfamily \#include \char`\"{}roman.\+h\char`\"{}}\\*
+Include dependency graph for roman.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{roman_8cpp_ac2f6931c0def55f0a2ea1fb3051d8be6}{indexator} (char $\ast$numb, int \hyperlink{roman__test_8cpp_a439227feff9d7f55384e8780cfc2eb82}{size}, int $\ast$vector\+\_\+index)
+\item 
+int \hyperlink{roman_8cpp_a3ac408f70427e5d82d048747a50e5040}{adder} (int $\ast$vector\+\_\+index, int \hyperlink{roman__test_8cpp_a439227feff9d7f55384e8780cfc2eb82}{size})
+\item 
+int \hyperlink{roman_8cpp_a83b860d039b423b88b715306c063b215}{subtracter} (int $\ast$vector\+\_\+index, int \hyperlink{roman__test_8cpp_a439227feff9d7f55384e8780cfc2eb82}{size}, int \hyperlink{roman__test_8cpp_a8b2e13c78efca330f06b6ddcd7464b41}{result})
+\item 
+int \hyperlink{roman_8cpp_a376aff3ac485bb334d96431e0a06d2cd}{transform\+\_\+roman} (char $\ast$roman\+\_\+number)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{roman.\+cpp@{roman.\+cpp}!adder@{adder}}
+\index{adder@{adder}!roman.\+cpp@{roman.\+cpp}}
+\subsubsection[{\texorpdfstring{adder(int $\ast$vector\+\_\+index, int size)}{adder(int *vector_index, int size)}}]{\setlength{\rightskip}{0pt plus 5cm}int adder (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{vector\+\_\+index, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{roman_8cpp_a3ac408f70427e5d82d048747a50e5040}{}\label{roman_8cpp_a3ac408f70427e5d82d048747a50e5040}
+\index{roman.\+cpp@{roman.\+cpp}!indexator@{indexator}}
+\index{indexator@{indexator}!roman.\+cpp@{roman.\+cpp}}
+\subsubsection[{\texorpdfstring{indexator(char $\ast$numb, int size, int $\ast$vector\+\_\+index)}{indexator(char *numb, int size, int *vector_index)}}]{\setlength{\rightskip}{0pt plus 5cm}void indexator (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{numb, }
+\item[{int}]{size, }
+\item[{int $\ast$}]{vector\+\_\+index}
+\end{DoxyParamCaption}
+)}\hypertarget{roman_8cpp_ac2f6931c0def55f0a2ea1fb3051d8be6}{}\label{roman_8cpp_ac2f6931c0def55f0a2ea1fb3051d8be6}
+\index{roman.\+cpp@{roman.\+cpp}!subtracter@{subtracter}}
+\index{subtracter@{subtracter}!roman.\+cpp@{roman.\+cpp}}
+\subsubsection[{\texorpdfstring{subtracter(int $\ast$vector\+\_\+index, int size, int result)}{subtracter(int *vector_index, int size, int result)}}]{\setlength{\rightskip}{0pt plus 5cm}int subtracter (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{vector\+\_\+index, }
+\item[{int}]{size, }
+\item[{int}]{result}
+\end{DoxyParamCaption}
+)}\hypertarget{roman_8cpp_a83b860d039b423b88b715306c063b215}{}\label{roman_8cpp_a83b860d039b423b88b715306c063b215}
+\index{roman.\+cpp@{roman.\+cpp}!transform\+\_\+roman@{transform\+\_\+roman}}
+\index{transform\+\_\+roman@{transform\+\_\+roman}!roman.\+cpp@{roman.\+cpp}}
+\subsubsection[{\texorpdfstring{transform\+\_\+roman(char $\ast$roman\+\_\+number)}{transform_roman(char *roman_number)}}]{\setlength{\rightskip}{0pt plus 5cm}int transform\+\_\+roman (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{roman\+\_\+number}
+\end{DoxyParamCaption}
+)}\hypertarget{roman_8cpp_a376aff3ac485bb334d96431e0a06d2cd}{}\label{roman_8cpp_a376aff3ac485bb334d96431e0a06d2cd}
