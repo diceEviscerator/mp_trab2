@@ -46,17 +46,17 @@ TEST(romanTest, invString6){
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
 }
-TEST(romanTest, invString7){
+TEST(romanTest, invStringExt1){
 	strcpy(entry, "VIX");
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
 }
-TEST(romanTest, invStringExt3){
+TEST(romanTest, invStringExt2){
 	strcpy(entry, "XXIXX");
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
 }
-TEST(romanTest, invStringExt4){
+TEST(romanTest, invStringExt3){
 	strcpy(entry, "XLX");
 	result=transf_roman(entry);
 	EXPECT_EQ(-1, result);
